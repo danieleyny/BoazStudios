@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #dbb14d;
+  --color-gold-light: #e8c96e;
+  --color-gold-dark: #b8942f;
+  --color-black: #000000;
+  --color-near-black: #0a0a0a;
+  --color-dark: #111111;
+  --color-dark-gray: #1a1a1a;
+  --color-medium-gray: #2a2a2a;
+  --color-accent: #ff0000;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbb14d40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dbb14d80;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #dbb14d40 #0a0a0a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #dbb14d;
+  color: #000000;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 177, 77, 0.1);
+}
+
+.glass:hover {
+  border-color: rgba(219, 177, 77, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #dbb14d 0%, #e8c96e 50%, #dbb14d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dbb14d, transparent);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
