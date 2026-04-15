@@ -19,7 +19,7 @@ function TeamCard({ member, index }) {
       {/* Image container */}
       <div className="relative overflow-hidden aspect-[3/4] mb-6">
         <img
-          src={member.image}
+          src={`${import.meta.env.BASE_URL}${member.image}`}
           alt={member.name}
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
