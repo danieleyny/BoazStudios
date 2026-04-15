@@ -78,7 +78,7 @@ export const GALLERY = {
   images: [
     { url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80', alt: 'Main training floor' },
     { url: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&q=80', alt: 'Private training suite' },
-    { url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80', alt: 'Premium equipment' },
+    { url: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=1200&q=80', alt: 'Premium equipment' },
     { url: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80', alt: 'Recovery lounge' },
     { url: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1200&q=80', alt: 'Townhouse exterior' },
     { url: 'https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?w=1200&q=80', alt: 'Luxury interior' },
