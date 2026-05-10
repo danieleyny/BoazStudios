@@ -1390,6 +1390,7 @@ p {
   text-align: center;
   background: var(--black-light);
   position: relative;
+  scroll-margin-top: 90px;
 }
 
 .lead-section::before {
