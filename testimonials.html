@@ -19,8 +19,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function(){try{if(sessionStorage.getItem('boazIntroShown')){document.documentElement.classList.add('intro-seen');}}catch(e){}})();
+  </script>
 </head>
 <body>
+
+  <!-- Intro Animation -->
+  <div class="intro" id="intro" role="presentation" aria-hidden="true">
+    <div class="intro__glow"></div>
+    <div class="intro__beam"></div>
+    <span class="intro__sparkle" style="--o:0.8; left:12%; top:24%; width:2px; height:2px; animation-delay:1.2s;"></span>
+    <span class="intro__sparkle" style="--o:0.6; left:86%; top:18%; width:3px; height:3px; animation-delay:1.4s;"></span>
+    <span class="intro__sparkle" style="--o:0.7; left:22%; top:76%; width:2px; height:2px; animation-delay:1.6s;"></span>
+    <span class="intro__sparkle" style="--o:0.5; left:78%; top:72%; width:2px; height:2px; animation-delay:1.8s;"></span>
+    <span class="intro__sparkle" style="--o:0.9; left:50%; top:14%; width:3px; height:3px; animation-delay:1.3s;"></span>
+    <span class="intro__sparkle" style="--o:0.7; left:46%; top:84%; width:2px; height:2px; animation-delay:2.0s;"></span>
+    <span class="intro__sparkle" style="--o:0.5; left:8%;  top:52%; width:3px; height:3px; animation-delay:1.7s;"></span>
+    <span class="intro__sparkle" style="--o:0.6; left:92%; top:48%; width:2px; height:2px; animation-delay:1.5s;"></span>
+    <span class="intro__sparkle" style="--o:0.8; left:34%; top:32%; width:2px; height:2px; animation-delay:1.9s;"></span>
+    <span class="intro__sparkle" style="--o:0.6; left:66%; top:68%; width:2px; height:2px; animation-delay:1.4s;"></span>
+    <div class="intro__inner">
+      <span class="intro__hairline-top" aria-hidden="true"></span>
+      <div class="intro__word" aria-label="Boaz">
+        <span class="intro__letter">B</span>
+        <span class="intro__letter">O</span>
+        <span class="intro__letter">A</span>
+        <span class="intro__letter">Z</span>
+      </div>
+      <span class="intro__sub">Studios</span>
+      <span class="intro__hairline-bottom" aria-hidden="true"></span>
+      <span class="intro__caption">New York &middot; Est. 2006</span>
+    </div>
+    <button class="intro__skip" type="button" aria-label="Skip intro">Skip</button>
+  </div>
 
   <a href="#main-content" class="skip-nav">Skip to main content</a>
 
@@ -219,6 +251,15 @@
       </div>
     </div>
   </footer>
+
+  <a href="get-started.html" class="floating-cta" aria-label="Get started — sign up for a fitness evaluation">
+    <span class="floating-cta__label-long">Get</span>
+    <span>Started</span>
+    <svg class="floating-cta__arrow" viewBox="0 0 24 24" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </a>
 
   <button class="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>

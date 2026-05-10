@@ -5,9 +5,40 @@
 (function () {
   'use strict';
 
+  // ---- Intro Animation (first-load splash) ----
+  const intro = document.getElementById('intro');
+  if (intro) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.body.classList.add('intro-active');
+    sessionStorage.setItem('boazIntroShown', '1');
+
+    const total = reduce ? 1200 : 4400;
+    let dismissed = false;
+
+    function dismissIntro() {
+      if (dismissed) return;
+      dismissed = true;
+      intro.classList.add('intro--out');
+      document.body.classList.remove('intro-active');
+      window.setTimeout(function () {
+        if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
+      }, 1000);
+    }
+
+    window.setTimeout(dismissIntro, total);
+
+    // Skip on click/key after a short delay so accidental clicks during render don't dismiss
+    window.setTimeout(function () {
+      intro.addEventListener('click', dismissIntro);
+      window.addEventListener('keydown', dismissIntro, { once: true });
+    }, 600);
+  }
+
   // ---- Navbar Scroll Behavior ----
   const navbar = document.querySelector('.navbar');
   const backToTop = document.querySelector('.back-to-top');
+  const floatingCTA = document.querySelector('.floating-cta');
+  let ctaPulsed = false;
 
   function onScroll() {
     const scrollY = window.scrollY;
@@ -16,6 +47,17 @@
     }
     if (backToTop) {
       backToTop.classList.toggle('visible', scrollY > 500);
+    }
+    if (floatingCTA) {
+      // Show after the user scrolls past the hero so it doesn't compete with primary CTAs
+      const trigger = Math.min(window.innerHeight * 0.6, 500);
+      const show = scrollY > trigger;
+      floatingCTA.classList.toggle('visible', show);
+      if (show && !ctaPulsed) {
+        ctaPulsed = true;
+        floatingCTA.classList.add('pulse');
+        window.setTimeout(function () { floatingCTA.classList.remove('pulse'); }, 5400);
+      }
     }
   }
 
